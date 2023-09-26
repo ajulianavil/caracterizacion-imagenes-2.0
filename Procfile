@@ -1,0 +1,1 @@
+web: gunicorn s3_file_selector.wsgi --log-file -
