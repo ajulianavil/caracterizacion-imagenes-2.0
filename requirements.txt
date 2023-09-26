@@ -3,3 +3,4 @@ boto3
 gunicorn
 whitenoise
 python-dotenv
+django-storages
