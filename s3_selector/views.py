@@ -22,7 +22,7 @@ def get_image_url(key: str):
 def display_image(request):
     files =[]
 
-    response = s3.list_objects(Bucket=bucket_name, Prefix='ultrasond_images/') 
+    response = s3.list_objects(Bucket=bucket_name, Prefix='ultrasond_images/')
     location = s3.get_bucket_location(Bucket=bucket_name)['LocationConstraint']
     
     for content in response.get('Contents', []):

@@ -72,9 +72,11 @@
             {%endif%}
 
             <label for="otro"> Otro </label>
+            <p style="font-size: small; color: red;"> Use guiones en vez de espacios. </p>
+
             <div class="input-container" style="display: flex; gap: 10px;">
-                <input type="text" placeholder="Nombre de metadato" id="new_name_metadato" name="new_name_metadato">
-                <input type="text" placeholder="Valor del metadato" id="new_value_metadato" name="new_value_metadato">
+                <input type="text" placeholder="Nombre de metadato" id="new_name_metadato" name="new_name_metadato" oninput="removeSpaces(this)">
+                <input type="text" placeholder="Valor del metadato" id="new_value_metadato" name="new_value_metadato" oninput="removeSpaces(this)">
             </div>
 
             </br>
@@ -83,4 +85,9 @@
         </form>
         <a href="{% url 'display_image'%}"> Regresar a la lista </a>
     </body>
+    <script>
+        function removeSpaces(input) {
+            input.value = input.value.replace(/\s/g, ''); // Remove all spaces
+        }
+        </script>
 </html>
